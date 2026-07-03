@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Small Business AI CX Suite</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">AI Customer Experience Solution</p>
+        <h1>Support that feels human, even when your team is busy.</h1>
+        <p class="hero-text">
+          A small-business customer experience prototype with smart chat, appointment support,
+          recommendations, escalations, and a live admin dashboard.
+        </p>
+        <div class="hero-actions">
+          <button class="primary-btn" data-scroll-target="#customer-zone">Open Demo</button>
+          <button class="secondary-btn" data-scroll-target="#dashboard-zone">View Dashboard</button>
+        </div>
+        <ul class="hero-metrics">
+          <li><strong>24/7</strong><span>first-line support</span></li>
+          <li><strong>3x</strong><span>faster response flow</span></li>
+          <li><strong>1</strong><span>shared customer workspace</span></li>
+        </ul>
+      </div>
+      <div class="hero-card">
+        <div class="status-pill">
+          <span class="status-dot"></span>
+          Smart assistant online
+        </div>
+        <div class="signal-card">
+          <h2>Today's activity</h2>
+          <div class="signal-grid">
+            <article>
+              <span class="signal-label">Queries handled</span>
+              <strong id="heroQueries">14</strong>
+            </article>
+            <article>
+              <span class="signal-label">Escalations</span>
+              <strong id="heroEscalations">2</strong>
+            </article>
+            <article>
+              <span class="signal-label">Bookings</span>
+              <strong id="heroBookings">5</strong>
+            </article>
+            <article>
+              <span class="signal-label">Satisfaction</span>
+              <strong id="heroSatisfaction">92%</strong>
+            </article>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="feature-strip">
+        <article>
+          <h3>Instant answers</h3>
+          <p>Answers FAQs about hours, pricing, services, and order status.</p>
+        </article>
+        <article>
+          <h3>Smart booking</h3>
+          <p>Captures appointments and keeps customers informed automatically.</p>
+        </article>
+        <article>
+          <h3>Human handoff</h3>
+          <p>Flags urgent or emotional conversations for staff review.</p>
+        </article>
+      </section>
+
+      <section id="customer-zone" class="workspace">
+        <div class="section-heading">
+          <p class="eyebrow">Customer Experience</p>
+          <h2>Interactive support desk</h2>
+        </div>
+
+        <div class="workspace-grid">
+          <aside class="customer-card profile-card">
+            <h3>Customer snapshot</h3>
+            <div class="profile-grid">
+              <label>
+                <span>Name</span>
+                <input id="customerName" type="text" value="Aarav Mehta">
+              </label>
+              <label>
+                <span>Email</span>
+                <input id="customerEmail" type="email" value="aarav@example.com">
+              </label>
+              <label>
+                <span>Business Type</span>
+                <select id="businessType">
+                  <option value="salon">Salon</option>
+                  <option value="clinic">Clinic</option>
+                  <option value="retail">Retail Store</option>
+                  <option value="repair">Repair Service</option>
+                </select>
+              </label>
+              <label>
+                <span>Loyalty Tier</span>
+                <select id="loyaltyTier">
+                  <option value="gold">Gold</option>
+                  <option value="silver">Silver</option>
+                  <option value="new">New Customer</option>
+                </select>
+              </label>
+            </div>
+
+            <div class="quick-actions">
+              <button class="chip-btn" data-quick-message="What are your business hours?">Store hours</button>
+              <button class="chip-btn" data-quick-message="I want to book an appointment for tomorrow.">Book appointment</button>
+              <button class="chip-btn" data-quick-message="Can you recommend a premium package for me?">Get recommendation</button>
+              <button class="chip-btn" data-quick-message="I am upset because my order is delayed.">Complaint</button>
+            </div>
+          </aside>
+
+          <section class="customer-card chat-card">
+            <div class="chat-header">
+              <div>
+                <h3>AI support assistant</h3>
+                <p>Context-aware first response with human escalation</p>
+              </div>
+              <button id="clearChat" class="ghost-btn">Clear chat</button>
+            </div>
+
+            <div id="chatMessages" class="chat-messages" aria-live="polite"></div>
+
+            <form id="chatForm" class="chat-form">
+              <input id="chatInput" type="text" placeholder="Ask about services, bookings, delays, offers..." autocomplete="off">
+              <button class="primary-btn" type="submit">Send</button>
+            </form>
+          </section>
+
+          <aside class="customer-card booking-card">
+            <h3>Appointment planner</h3>
+            <form id="bookingForm" class="stack-form">
+              <label>
+                <span>Service</span>
+                <select id="serviceType">
+                  <option value="Hair Styling">Hair Styling</option>
+                  <option value="Skin Consultation">Skin Consultation</option>
+                  <option value="Device Repair">Device Repair</option>
+                  <option value="Product Demo">Product Demo</option>
+                </select>
+              </label>
+              <label>
+                <span>Date</span>
+                <input id="bookingDate" type="date">
+              </label>
+              <label>
+                <span>Time</span>
+                <select id="bookingTime">
+                  <option>10:00 AM</option>
+                  <option>12:00 PM</option>
+                  <option>03:00 PM</option>
+                  <option>05:00 PM</option>
+                </select>
+              </label>
+              <button class="primary-btn" type="submit">Confirm Booking</button>
+            </form>
+
+            <div id="bookingStatus" class="status-panel">
+              <p>No booking confirmed yet.</p>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="dashboard-zone" class="workspace dashboard">
+        <div class="section-heading">
+          <p class="eyebrow">Admin View</p>
+          <h2>Operations dashboard</h2>
+        </div>
+
+        <div class="dashboard-grid">
+          <article class="metric-card">
+            <span>Total interactions</span>
+            <strong id="totalInteractions">0</strong>
+          </article>
+          <article class="metric-card">
+            <span>Bookings created</span>
+            <strong id="totalBookings">0</strong>
+          </article>
+          <article class="metric-card">
+            <span>Escalations raised</span>
+            <strong id="totalEscalations">0</strong>
+          </article>
+          <article class="metric-card">
+            <span>Positive sentiment</span>
+            <strong id="positiveSentiment">0%</strong>
+          </article>
+        </div>
+
+        <div class="dashboard-panels">
+          <section class="dashboard-panel">
+            <div class="panel-head">
+              <h3>Conversation insights</h3>
+              <p>Live summary generated from customer interactions</p>
+            </div>
+            <ul id="insightList" class="insight-list"></ul>
+          </section>
+
+          <section class="dashboard-panel">
+            <div class="panel-head">
+              <h3>Escalation queue</h3>
+              <p>Cases that need staff attention</p>
+            </div>
+            <ul id="escalationList" class="queue-list"></ul>
+          </section>
+
+          <section class="dashboard-panel">
+            <div class="panel-head">
+              <h3>Recent activity</h3>
+              <p>Bookings, recommendations, and service actions</p>
+            </div>
+            <ul id="activityList" class="activity-list"></ul>
+          </section>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
